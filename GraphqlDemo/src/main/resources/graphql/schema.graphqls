@@ -1,0 +1,21 @@
+type Query{
+    employees:[Employee!]!
+}
+
+enum Gender{
+    MALE,FEMALE,OTHER
+}
+
+type Employee{
+    id: ID!
+    name: String
+    gender:Gender
+    email:String
+    department:Department
+}
+
+type Department{
+    id: ID!
+    name:String
+    description:String
+}

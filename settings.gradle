@@ -1,0 +1,5 @@
+rootProject.name = 'GraphqlDemo'
+
+include 'part_1_Intro'
+include 'part_2_sdl'
+

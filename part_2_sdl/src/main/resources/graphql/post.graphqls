@@ -1,0 +1,43 @@
+"""
+    Post is the interface abstract which has mainly three implementations as of now.
+    1. TextPost
+    2. ImagePost
+    3. VideoPost
+"""
+interface Post{
+    "Id of the Post."
+    id:ID!
+    "created user who did this Post."
+    createdUser:User!
+}
+
+type TextPost implements Post{
+    id:ID!
+    createdUser:User!
+    text: String!
+}
+
+
+interface MultiMediaPost implements Post{
+    id:ID!
+    createdUser:User!
+    mediaLocation: String!
+}
+
+type VideoPost implements Post & MultiMediaPost{
+    id:ID!
+    createdUser:User!
+    mediaLocation: String!
+    lengthInSeconds: Int!
+}
+
+type ImagePost implements  Post & MultiMediaPost{
+    id:ID!
+    createdUser:User!
+    mediaLocation: String!
+}
+
+input PostFilter{
+    userId:ID!
+    limit:Int = 5
+}

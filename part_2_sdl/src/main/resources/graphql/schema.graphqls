@@ -1,0 +1,7 @@
+type Query{
+    users:[User!]!
+    getUserById(id:ID!):User
+    postsByFilter(postFilter:PostFilter): [Post]
+    postById(id:ID):Post
+    posts:[Post]
+}

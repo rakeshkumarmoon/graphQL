@@ -1,0 +1,23 @@
+enum Gender{
+    MALE,FEMALE,OTHER
+}
+"""
+User is the type here which represents User in the system.
+It has mainly id and name as mandatory fields.
+User can have friends list, which is List if User again.
+"""
+type User{
+    "Unique Id of User"
+    id: ID!
+    "Name of user and its not null."
+    name: String!
+    "Gender of user which can be null"
+    # This is the comment and it will not come on documentation explorer
+    # For multiline we need to add multi # on each line
+    gender:Gender   # It comes from Enum
+    "email of user which can be null"
+    email:String
+    friendList:[User!]
+}
+
+
